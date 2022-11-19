@@ -7,6 +7,7 @@ import {
 
 import Content from './components/Content'
 import Country from './components/Country'
+import Header from './components/Header'
 
 const App = () => {
   const [allCountries, setAllCountries] = useState([])
@@ -22,6 +23,7 @@ const App = () => {
 
   return (
     <Router>
+    <Header></Header>
       <Routes>
         <Route path="/" element= {<Content countries={allCountries}/>}/>
         <Route path='/:name' element={<Country></Country>}/>

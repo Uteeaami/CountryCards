@@ -14,6 +14,7 @@ const Filter = ({handleFilterChange}) => {
                 <option value="europe">Europe</option>
                 <option value="oceania">Oceania</option>
             </select>
+            <input className="searchfield" placeholder="Search by name.." onChange={handleFilterChange}></input>
         </form>
     )
 }

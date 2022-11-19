@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import Header from './Header'
 import Filter from './Filter'
+import Footer from './Footer'
 import {
      Link
   } from "react-router-dom"
@@ -9,24 +9,27 @@ import {
 
 const Content = ({countries}) =>{
     const [regionCountries, setRegionCountries] = useState('')
+    const [typeFilter, setTypeFilter] = useState('')
 
     const handleFilterChange = (event) => {
         setRegionCountries(event.target.value)
+        setTypeFilter(event.target.value)
       }
 
 
         return(
             <div>
-            <Header></Header>
             <Filter handleFilterChange={handleFilterChange}></Filter>
             <section className="section">
-            {countries.filter(country => country.region.toUpperCase().includes(regionCountries.toUpperCase()))
+            {countries.filter(country => country.region.toUpperCase().includes(regionCountries.toUpperCase()) ? 
+                country.region.toUpperCase().includes(regionCountries.toUpperCase()) : 
+                country.name.common.toUpperCase().includes(typeFilter.toUpperCase()))
                 .map(country => 
                     <Link className="Link" to={`/${country.name.common}`} key={country.name.common}>
-                    <article className="article">
+                    <article className="contentArticle">
                         <h2>{country.name.common}</h2>
                         <ul>
-                            <li>{`Capital: ${country.capital}`}</li>
+                            <li>{`Capital: ${country.capital ? country.capital : 'No capital'}`}</li>
                             <li>{`Region: ${country.region}`}</li>
                         </ul>
                         <img src={Object.values(country.flags)[0]}></img>
@@ -34,7 +37,7 @@ const Content = ({countries}) =>{
                     </Link>
                 )}
             </section>
-
+            <Footer></Footer>
             </div>
         )
     }
