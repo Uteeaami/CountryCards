@@ -9,6 +9,7 @@ import Content from './components/Content'
 import Country from './components/Country'
 import Header from './components/Header'
 
+
 const App = () => {
   const [allCountries, setAllCountries] = useState([])
   
@@ -20,6 +21,8 @@ const App = () => {
         setAllCountries(response.data)
       })
   }, [])
+
+  
 
   return (
     <Router>

@@ -25,8 +25,8 @@ const Content = ({countries}) =>{
                 country.region.toUpperCase().includes(regionCountries.toUpperCase()) : 
                 country.name.common.toUpperCase().includes(typeFilter.toUpperCase()))
                 .map(country => 
-                    <Link className="Link" to={`/${country.name.common}`} key={country.name.common}>
-                    <article className="contentArticle">
+                    <Link id="Link" to={`/${country.name.common}`} key={country.name.common}>
+                    <article id="contentArticle">
                         <h2>{country.name.common}</h2>
                         <ul>
                             <li>{`Capital: ${country.capital ? country.capital : 'No capital'}`}</li>

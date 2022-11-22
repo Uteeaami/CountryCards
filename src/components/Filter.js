@@ -5,7 +5,7 @@ const Filter = ({handleFilterChange}) => {
     return(
        
         <form>
-            <select className="dropdown" onChange={handleFilterChange}>
+            <select id="dropdown" onChange={handleFilterChange}>
                 <option value="">Show All Regions</option>
                 <option value="africa">Africa</option>
                 <option value="americas">Americas</option>
@@ -14,7 +14,7 @@ const Filter = ({handleFilterChange}) => {
                 <option value="europe">Europe</option>
                 <option value="oceania">Oceania</option>
             </select>
-            <input className="searchfield" placeholder="Search by name.." onChange={handleFilterChange}></input>
+            <input id="searchfield" placeholder="Search by name.." onChange={handleFilterChange}></input>
         </form>
     )
 }
