@@ -14,7 +14,7 @@ const Weather = ({name}) => {
             setCountryWeather(response.data)
           }).catch(error => {
             console.log(error)
-          }).catch(console.log("Not found"))    
+          }) 
       }, [])
       
 
