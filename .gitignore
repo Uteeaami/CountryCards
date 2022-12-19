@@ -10,7 +10,6 @@
 
 # production
 /build
-/pictures
 
 # misc
 .DS_Store
