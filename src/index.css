@@ -163,7 +163,6 @@ body{
     transition-duration: 0.5s;
 }
 
-
 #back{
     font-size: 12px;
     position: relative;
@@ -203,7 +202,6 @@ body{
 #weatherArticle li{
     font-size: 16px;
     position: relative;
-    
     padding: 2px;
     right: 16px;
 }
